@@ -73,8 +73,8 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            templateUrl: __webpack_require__(198),
-            styleUrls: [__webpack_require__(199)]
+            template: __webpack_require__(198),
+            styles: [__webpack_require__(199)]
         })
     ], AppComponent);
     return AppComponent;
@@ -87,7 +87,7 @@ exports.AppComponent = AppComponent;
 /***/ 198:
 /***/ (function(module, exports) {
 
-module.exports = "<main>\r\n    <h1>Hello from Angular Application with Webpack</h1>\r\n    <img src=\"/assets/images/angular.png\">\r\n</main>";
+module.exports = "<main>\r\n    <h1>Hello from Angular Application with Webpack</h1>\r\n    <img src=\"/images/angular.png\"> \r\n</main>"
 
 /***/ }),
 
