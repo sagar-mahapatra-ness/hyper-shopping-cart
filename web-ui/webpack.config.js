@@ -10,19 +10,22 @@ module.exports = {
         'polyfills': './src/polyfills.ts'
     },
     resolve: {
-         extensions: ['.ts','.js','html','css','png']
+        extensions: ['.ts', '.js', 'html', 'css', 'png','scss'],
+        alias: {
+         "~": __dirname + "/node_modules/"
+        }
     },
 
     module: {
-        
+
         loaders: [
             // all files with a '.ts' or '.tsx' extension will be handled by 'ts-loader'
-            { test: /\.ts?$/, loaders: ["awesome-typescript-loader",'angular2-template-loader'] }
-           ,
-           {
-        test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
-        loader: 'raw-loader'
-      },
+            { test: /\.ts?$/, loaders: ["awesome-typescript-loader", 'angular2-template-loader'] }
+            ,
+            {
+                test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
+                loader: 'raw-loader'
+            },
 
             {
                 test: /\.html$/,
@@ -30,24 +33,24 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                loader: 'raw-loader'
+                loaders: ['raw-loader']
             }
         ]
     },
 
     plugins: [
-		new webPack.optimize.CommonsChunkPlugin({
-          name: ['app', 'vendor', 'polyfills']
-      }),
+        new webPack.optimize.CommonsChunkPlugin({
+            name: ['app', 'vendor', 'polyfills']
+        }),
         new HtmlWebpackPlugin({
             template: 'src/index.html'
         }),
-         new CopyWebpackPlugin([{
-        from: 'src/assets'
-      }])
+        new CopyWebpackPlugin([{
+            from: 'src/assets'
+        }])
     ],
     output: {
-      path: __dirname + '/build',  
-      filename: '[name].js'
-   }
+        path: __dirname + '/build',
+        filename: '[name].js'
+    }
 }; 

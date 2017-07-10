@@ -4,7 +4,10 @@
 /dist
 /tmp
 /out-tsc
-**/build
+/build
+**/build/
+build/
+web-ui/build
 
 # dependencies
 /node_modules
